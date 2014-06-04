@@ -12,6 +12,7 @@ end
 @opts = Trollop::options do
   opt :input_file, "Nessus CSV input file", :type => :string, :required => true
   opt :output_file, "Output CSV file", :type => :string, :required => true
+  opt :cvss, "Minumum CVSS score", :type => :integer, :default => 7
   opt :verbose, "Be verbose"
 end
 
@@ -19,14 +20,14 @@ def log(message)
   puts "[*] #{message}" if @opts[:verbose]
 end
 
+log("Processing file #{@opts[:input_file]}")
+log("Minimum CVSS: #{@opts[:cvss]}")
 csv = CSV.parse(File.read(@opts[:input_file]), :headers => true, :header_converters => :symbol)
-
-minimum_cvss_score = 7
 
 hosts_vulns = { 'IP Address' => [] }
 
 csv.each do |row|
-  unless row[:cvss].to_i < minimum_cvss_score
+  unless row[:cvss].to_i < @opts[:cvss]
 
     # Build a list of IP address
     hosts_vulns['IP Address'] |= [row[:host]]
