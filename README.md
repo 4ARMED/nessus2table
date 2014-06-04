@@ -10,16 +10,22 @@ Rather than do this by hand, this script takes an exported Nessus CSV file and c
 
 1. Clone this Github repo
 
-     git clone https://github.com/4armed/nessus2table.git
+```ShellSession
+git clone https://github.com/4armed/nessus2table.git
+```
 
 2. Install the dependencies (there's only one - trollop)
 
+```ShellSession
      cd nessus2table
      bundle install
+ ```
 
 3. Run the ruby script with the location of your exported Nessus CSV and the filename you'd like the output in.
 
-    ruby nessus2table.rb -i <NessusCVSfile> -o <TargetCVSFile>
+```ShellSession
+ruby nessus2table.rb -i <NessusCVSfile> -o <TargetCVSFile>
+```
 
 
 That's it.
