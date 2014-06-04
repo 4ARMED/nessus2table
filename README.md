@@ -17,8 +17,8 @@ git clone https://github.com/4armed/nessus2table.git
 2. Install the dependencies (there's only one - trollop)
 
 ```ShellSession
-     cd nessus2table
-     bundle install
+ cd nessus2table
+ bundle install
  ```
 
 3. Run the ruby script with the location of your exported Nessus CSV and the filename you'd like the output in.
