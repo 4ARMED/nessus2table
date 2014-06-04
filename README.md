@@ -30,4 +30,4 @@ ruby nessus2table.rb -i <NessusCVSfile> -o <TargetCVSFile>
 
 That's it.
 
-Any questions ping us on Twitter @4ARMED or @marcwickenden.
+Any questions ping us on Twitter <a href="https://twitter.com/4ARMED">@4ARMED</a> or me <a href="https://twitter.com/marcwickenden">@marcwickenden</a>.
